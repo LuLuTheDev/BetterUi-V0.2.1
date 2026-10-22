@@ -1,0 +1,49 @@
+- name: ReactOS-vm
+  # You may pin to the exact commit or the version.
+  # uses: vmactions/reactos-vm@9866fa5aa0acfd69afc813226a24e532e0a508d8
+  uses: vmactions/reactos-vm@v1.0.5
+  with:
+    # The OS name
+    osname: # default is reactos
+    # Install some tools before CI runs
+    prepare: # optional
+    # The CI command to run
+    run: # optional
+    # The release version of ReactOS vm. Only the leading, "." separated part of it is enough, the newest matching release is used.
+    release: # optional
+    # The cpu architecture of ReactOS vm
+    arch: # optional
+    # The envs to pass into ReactOS vm
+    envs: # optional
+    # Set the memory size of the vm
+    mem: # optional, default is 6144
+    # Set the cpu cores of the vm
+    cpu: # optional
+    # The NAT ports to ReactOS vm
+    nat: # optional
+    # Deprecated and ignored. The prepare/run scripts are always executed with sh.
+    usesh: # optional
+    # How to synchronize the source code to/from the VM. Default is rsync.
+    sync: # optional
+    # Whether or not to copy the build result repo back from the VM to the host runner. Default is true.
+    copyback: # optional
+    # output debug message
+    debug: # optional
+    # Directory to store VM data/images.
+    data-dir: # optional
+    # Directory to store anyvm cache. If set, overrides default temp cache path.
+    cache-dir: # optional
+    # Synchronize the VM time with the ntp. Default is false.
+    sync-time: # optional
+    # Disable caching for apt packages and VM images. Default is false.
+    disable-cache: # optional, default is false
+    # Cache the VM image again after the prepare step, so later runs with the same prepare script skip it and start directly at run. Default is false.
+    cache-after-prepare: # optional, default is false
+    # If true, enable remote VNC and you can connect to the VM via web VNC page to debug. Default is false.
+    debug-on-error: # optional, default is 
+    # The VNC password. Default is empty.
+    vnc-password: # optional, default is 
+    # Custom shell name for the VM shell wrapper script.
+    custom-shell-name: # optional
+    # GitHub token used for the GitHub API requests that locate the VM image. Defaults to the workflow token; unauthenticated requests share a small rate limit across all jobs on the same runner IP.
+    token: # optional, default is ${{ github.token }}
